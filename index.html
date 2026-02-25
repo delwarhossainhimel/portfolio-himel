@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delwar Hossain Himel — DevOps | Cloud | SRE</title>
+  <meta name="description" content="Portfolio of Delwar Hossain Himel — DevOps | Cloud | Site Reliability Engineer in Dhaka, Bangladesh." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#101a33;
+      --panel2:#0f1830;
+      --text:#e8ecff;
+      --muted:#b7c0e6;
+      --accent:#7aa2ff;
+      --accent2:#63f7d6;
+      --border:rgba(255,255,255,.08);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(900px 500px at 15% 10%, rgba(122,162,255,.18), transparent 60%),
+                  radial-gradient(800px 500px at 80% 20%, rgba(99,247,214,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,16,32,.55);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 24px;
+      max-width:var(--max); margin:0 auto;
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:2px;
+    }
+    .brand b{font-size:14px; letter-spacing:.4px}
+    .brand span{font-size:12px; color:var(--muted)}
+    .navlinks{
+      display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+      font-size:13px; color:var(--muted);
+    }
+    .navlinks a{
+      padding:8px 10px; border-radius:10px;
+    }
+    .navlinks a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .hero{
+      padding:44px 0 18px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 880px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{padding:26px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:12px; color:var(--muted);
+      padding:8px 12px; border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+    .dot{width:8px; height:8px; border-radius:50%; background:var(--accent2); box-shadow:0 0 0 6px rgba(99,247,214,.12)}
+    h1{margin:14px 0 10px; font-size:40px; line-height:1.15}
+    @media (max-width: 520px){ h1{font-size:32px} }
+    .subtitle{color:var(--muted); font-size:15px; margin:0 0 16px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:11px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+    }
+    .btn:hover{background:rgba(255,255,255,.08)}
+    .btn.primary{
+      border-color: rgba(122,162,255,.4);
+      background: linear-gradient(180deg, rgba(122,162,255,.22), rgba(122,162,255,.08));
+    }
+    .btn.primary:hover{background: linear-gradient(180deg, rgba(122,162,255,.28), rgba(122,162,255,.12))}
+    .heroSide{padding:18px}
+    .mini{
+      padding:14px; border-radius:14px;
+      background: rgba(0,0,0,.18);
+      border:1px solid var(--border);
+      margin-bottom:12px;
+    }
+    .mini h3{margin:0 0 6px; font-size:13px; color:var(--muted); font-weight:600}
+    .mini p{margin:0; font-size:14px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      font-size:12px; color:var(--muted);
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+    section{padding:18px 0}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin:8px 0 12px;
+    }
+    .sectionTitle h2{margin:0; font-size:18px}
+    .sectionTitle span{color:var(--muted); font-size:13px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width: 880px){ .grid2{grid-template-columns:1fr} }
+    .panel{padding:18px}
+    .panel p{margin:0}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .list li{margin:7px 0}
+    .skills{
+      display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;
+    }
+    @media (max-width: 980px){ .skills{grid-template-columns:repeat(2, 1fr)} }
+    @media (max-width: 620px){ .skills{grid-template-columns:1fr} }
+    .skillBlock{
+      padding:14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .skillBlock b{display:block; margin-bottom:6px; font-size:13px}
+    .skillBlock .muted{color:var(--muted); font-size:13px}
+    .projects{display:grid; grid-template-columns:1fr; gap:14px}
+    .project{
+      padding:18px;
+      display:grid; grid-template-columns:1.4fr .6fr; gap:14px;
+      align-items:start;
+    }
+    @media (max-width: 880px){ .project{grid-template-columns:1fr} }
+    .project h3{margin:0 0 8px; font-size:16px}
+    .project p{margin:0 0 10px; color:var(--muted)}
+    .meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .meta .chip{background: rgba(122,162,255,.08); color: #dbe5ff; border-color: rgba(122,162,255,.22)}
+    .projSide{
+      padding:14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.18);
+    }
+    .projSide b{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
+    .projSide ul{margin:0; padding-left:18px; color:var(--muted); font-size:13px}
+    .projSide li{margin:6px 0}
+    .timeline{display:grid; gap:12px}
+    .job{
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .jobTop{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-bottom:6px;
+    }
+    .jobTop h3{margin:0; font-size:15px}
+    .jobTop .when{color:var(--muted); font-size:13px}
+    .job .where{color:var(--muted); font-size:13px; margin-bottom:8px}
+    footer{
+      border-top:1px solid var(--border);
+      margin-top:22px;
+      padding:18px 0 34px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .contactGrid{
+      display:grid; grid-template-columns:1fr 1fr; gap:14px;
+    }
+    @media (max-width: 880px){ .contactGrid{grid-template-columns:1fr} }
+    .contactBox{padding:18px}
+    .contactLine{display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:var(--muted)}
+    .contactLine a{color:var(--text); border-bottom:1px dashed rgba(255,255,255,.25)}
+    .small{font-size:12px; color:var(--muted)}
+    .toplink{position:fixed; right:18px; bottom:18px; opacity:.92}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <b>DELWAR HOSSAIN HIMEL</b>
+        <span>DevOps | Cloud | Site Reliability Engineer</span>
+      </div>
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="card heroMain">
+        <div class="kicker"><span class="dot"></span> Available for DevOps / SRE roles • Dhaka, Bangladesh</div>
+        <h1>DevOps, Cloud & SRE Engineer building secure, scalable hybrid infrastructure.</h1>
+        <p class="subtitle">
+          4.5+ years designing, deploying, and operating enterprise-grade workloads across on-prem datacenters and Microsoft Azure.
+          Strong in CI/CD automation, Kubernetes (AKS), IaC (Terraform), observability, and security-hardened container deployments.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+          <!-- Replace # with your real URLs -->
+          <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="small" style="margin-top:14px;">
+          📍 Dhaka, Bangladesh &nbsp;•&nbsp; 📞 +8801777397888 &nbsp;•&nbsp; ✉️ <a href="mailto:himelmenow@gmail.com">himelmenow@gmail.com</a>
+        </p>
+      </div>
+
+      <aside class="card heroSide">
+        <div class="mini">
+          <h3>Focus Areas</h3>
+          <p>Azure (AKS, App Gateway/WAF, VPN), CI/CD (Jenkins), Terraform, Docker/Kubernetes, Observability.</p>
+          <div class="chips">
+            <span class="chip">AKS</span>
+            <span class="chip">Terraform</span>
+            <span class="chip">Jenkins</span>
+            <span class="chip">Prometheus</span>
+            <span class="chip">Grafana</span>
+            <span class="chip">Security Hardening</span>
+          </div>
+        </div>
+        <div class="mini">
+          <h3>Highlights</h3>
+          <p>Built production AKS across multiple clusters, WAF-enabled gateways, KEDA autoscaling, hybrid VPN to on-prem DCs, and modular Terraform networking.</p>
+        </div>
+        <div class="mini" style="margin-bottom:0;">
+          <h3>Primary Tooling</h3>
+          <div class="chips">
+            <span class="chip">Azure</span>
+            <span class="chip">Kubernetes</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Ansible</span>
+            <span class="chip">Bash</span>
+            <span class="chip">Python</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="sectionTitle">
+        <h2>About</h2>
+        <span>Career Summary</span>
+      </div>
+      <div class="card panel">
+        <p>
+          Highly skilled and proactive DevOps and Infrastructure Engineer with 4.5+ years of experience designing, deploying, and operating
+          secure, scalable hybrid infrastructures across on-premises datacenters and Microsoft Azure. Experienced in building multi-environment
+          CI/CD pipelines (Dev → Prod) with custom rollout/rollback strategies; operating production AKS clusters with WAF-enabled Application
+          Gateways, KEDA autoscaling, ACR integration, and site-to-site VPN connectivity. Strong focus on reliability, scalability, security, and
+          operational excellence.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="sectionTitle">
+        <h2>Technical Skills</h2>
+        <span>Cloud • IaC • CI/CD • Observability • Platforms</span>
+      </div>
+
+      <div class="skills">
+        <div class="skillBlock">
+          <b>Cloud Infrastructure</b>
+          <div class="muted">Microsoft Azure (AKS, VMs/VMSS, App Gateway/WAF, VPN, Blob Storage, ACR, Recovery Vault)</div>
+        </div>
+        <div class="skillBlock">
+          <b>On-prem Infrastructure</b>
+          <div class="muted">VMware ESXi / vCenter, oVirt Virtualization</div>
+        </div>
+        <div class="skillBlock">
+          <b>OS</b>
+          <div class="muted">RHEL, CentOS, Ubuntu, Windows Server</div>
+        </div>
+        <div class="skillBlock">
+          <b>Containers & Orchestration</b>
+          <div class="muted">Docker, Swarm, Kubernetes, AKS</div>
+        </div>
+        <div class="skillBlock">
+          <b>Infrastructure as Code</b>
+          <div class="muted">Terraform, Ansible (modular IaC, remote state)</div>
+        </div>
+        <div class="skillBlock">
+          <b>CI/CD & GitOps</b>
+          <div class="muted">Jenkins, GitHub, Argo CD, FluxCD</div>
+        </div>
+        <div class="skillBlock">
+          <b>Observability</b>
+          <div class="muted">Istio, Prometheus, Grafana, ELK, Uptime Kuma, ntfy</div>
+        </div>
+        <div class="skillBlock">
+          <b>Databases</b>
+          <div class="muted">MySQL, MariaDB, PostgreSQL, MSSQL, Oracle, MongoDB</div>
+        </div>
+        <div class="skillBlock">
+          <b>Scripting</b>
+          <div class="muted">Bash, Python</div>
+        </div>
+        <div class="skillBlock">
+          <b>Storage</b>
+          <div class="muted">NFS, Samba, GlusterFS, S3, Azure Blob Storage</div>
+        </div>
+        <div class="skillBlock">
+          <b>Mail Services</b>
+          <div class="muted">Postfix, Barracuda Mail Security Gateway, Proxmox Mail Security Gateway</div>
+        </div>
+        <div class="skillBlock">
+          <b>IP Telephony</b>
+          <div class="muted">Asterisk, Issabel, Elastix</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="sectionTitle">
+        <h2>Projects</h2>
+        <span>Selected work from your resume</span>
+      </div>
+
+      <div class="projects">
+        <div class="card project">
+          <div>
+            <h3>Enterprise-Scale Azure AKS Infrastructure Deployment</h3>
+            <p>
+              Designed, deployed, and operated a production-grade AKS environment for enterprise workloads with high availability,
+              security, automation, and hybrid connectivity across cloud and on-prem data centers.
+            </p>
+            <div class="meta">
+              <span class="chip">Azure AKS</span>
+              <span class="chip">App Gateway (WAF)</span>
+              <span class="chip">KEDA</span>
+              <span class="chip">Jenkins CI/CD</span>
+              <span class="chip">ACR</span>
+              <span class="chip">VPN</span>
+              <span class="chip">Prometheus/Grafana</span>
+            </div>
+          </div>
+          <div class="projSide">
+            <b>Key contributions</b>
+            <ul>
+              <li>2 AKS clusters + 2 WAF-enabled gateways</li>
+              <li>Dev→Prod CI/CD with rollout/rollback strategies</li>
+              <li>Event-driven autoscaling with KEDA</li>
+              <li>Hybrid site-to-site VPN to 2 datacenters</li>
+              <li>Scale: 72 vCPUs • 544 GB RAM</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card project">
+          <div>
+            <h3>Terraform-Based Azure Infrastructure Automation</h3>
+            <p>
+              Production-grade Terraform solution to provision Azure networking using modular IaC and secure remote state for collaboration
+              across teams.
+            </p>
+            <div class="meta">
+              <span class="chip">Terraform</span>
+              <span class="chip">azurerm backend</span>
+              <span class="chip">Hub-Spoke</span>
+              <span class="chip">VNet Peering</span>
+              <span class="chip">Hybrid VPN</span>
+            </div>
+          </div>
+          <div class="projSide">
+            <b>What it includes</b>
+            <ul>
+              <li>VNet + subnets + peering</li>
+              <li>Hub-and-spoke topology</li>
+              <li>VPN configuration for hybrid connectivity</li>
+              <li>Reusable modules for teams</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card project">
+          <div>
+            <h3>GPU-Accelerated Video Encoding Server (SaaS)</h3>
+            <p>
+              Built a dual-NVIDIA GPU encoding platform for hardware-accelerated HLS streaming; delivered as a SaaS solution for a client.
+            </p>
+            <div class="meta">
+              <span class="chip">NVIDIA GPUs</span>
+              <span class="chip">FFmpeg</span>
+              <span class="chip">HLS</span>
+              <span class="chip">Docker</span>
+              <span class="chip">NGINX</span>
+              <span class="chip">Python</span>
+            </div>
+          </div>
+          <div class="projSide">
+            <b>Core features</b>
+            <ul>
+              <li>GPU workload scaling</li>
+              <li>HLS pipeline</li>
+              <li>Linux + containerized services</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card project">
+          <div>
+            <h3>On-Prem High Availability Kubernetes Cluster (Binary Install)</h3>
+            <p>
+              Deployed a fully manual, production-grade Kubernetes cluster on-prem using raw binaries with HA control plane,
+              load balancing, L2 IP allocation, ingress routing, and monitoring.
+            </p>
+            <div class="meta">
+              <span class="chip">Kubernetes Binaries</span>
+              <span class="chip">etcd</span>
+              <span class="chip">HAProxy</span>
+              <span class="chip">MetalLB</span>
+              <span class="chip">NGINX Ingress</span>
+              <span class="chip">Prometheus/Grafana</span>
+            </div>
+          </div>
+          <div class="projSide">
+            <b>Architecture</b>
+            <ul>
+              <li>3 masters + multi-worker nodes</li>
+              <li>HAProxy load balancing</li>
+              <li>MetalLB L2 IP allocation</li>
+              <li>Ingress routing + monitoring</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card project">
+          <div>
+            <h3>Secure Docker Deployment for Financial Organizations</h3>
+            <p>
+              Deployed Docker-based ERP workloads on RHEL 9 under strict security compliance, implementing container hardening,
+              namespace isolation, traffic controls, and TLS encryption.
+            </p>
+            <div class="meta">
+              <span class="chip">Docker</span>
+              <span class="chip">RHEL 9</span>
+              <span class="chip">TLS</span>
+              <span class="chip">Namespace Isolation</span>
+              <span class="chip">Hardening</span>
+            </div>
+          </div>
+          <div class="projSide">
+            <b>Security focus</b>
+            <ul>
+              <li>Advanced container hardening</li>
+              <li>Blocked inter-container communication</li>
+              <li>TLS service-to-service encryption</li>
+              <li>Aligned with institutional policies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="sectionTitle">
+        <h2>Professional Experience</h2>
+        <span>Roles & responsibilities</span>
+      </div>
+
+      <div class="timeline">
+        <div class="job">
+          <div class="jobTop">
+            <h3>DevOps Engineer — Apsis Solutions</h3>
+            <div class="when">Dec 2024 – Present</div>
+          </div>
+          <div class="where">Dhaka, Bangladesh</div>
+          <ul class="list">
+            <li>Manage and optimize Azure infrastructure (VMs/VMSS, AKS, App Gateway/WAF, Load Balancers, Blob Storage, SSL lifecycle, cost optimization).</li>
+            <li>Design and maintain Jenkins CI/CD pipelines for Dev, QA, Staging, UAT, Demo, and Production with rollout/rollback strategies.</li>
+            <li>Operate VMware vCenter virtualization across two datacenters for high availability and continuity.</li>
+            <li>Implement observability with Prometheus, Grafana, and Uptime Kuma; proactive monitoring and alerting.</li>
+            <li>Database operations for MySQL, PostgreSQL, MSSQL, and Oracle (backup, performance tuning, capacity planning).</li>
+            <li>Automate workflows using Bash, Python, and Ansible; troubleshoot production incidents and bottlenecks.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="jobTop">
+            <h3>Site Reliability Engineer (SRE) — Transworld Mercantile Corporation</h3>
+            <div class="when">Oct 2021 – Nov 2024</div>
+          </div>
+          <div class="where">Dhaka, Bangladesh</div>
+          <ul class="list">
+            <li>R&D on open-source software for new product development.</li>
+            <li>Deployed and managed Postfix mail servers with Proxmox Mail Gateway.</li>
+            <li>Implemented oVirt hypervisor solutions for virtualization and resource optimization.</li>
+            <li>Designed storage solutions and backup strategies for HA and disaster recovery.</li>
+            <li>Containerized applications using Docker/Kubernetes; improved scalability and deployment efficiency.</li>
+            <li>Deployed and managed Asterisk cloud PBX; configured Mikrotik and Cisco routers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="sectionTitle">
+        <h2>Education</h2>
+        <span>Academic background</span>
+      </div>
+      <div class="card panel">
+        <p><b>B.Sc. in Electronic & Telecommunication Engineering</b> — Independent University, Bangladesh</p>
+        <p class="small">Aug 2017 – Sep 2021 • CGPA: 3.67 / 4.00</p>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs">
+      <div class="sectionTitle">
+        <h2>Certifications & Courses</h2>
+        <span>Credentials</span>
+      </div>
+      <div class="card panel">
+        <ul class="list" style="margin-top:0;">
+          <li>Azure Administrator Associate (AZ-104)</li>
+          <li>Terraform Associate (003) — Udemy</li>
+          <li>Certified Kubernetes Administrator (CKA) — Udemy</li>
+          <li>Docker Mastery (with Kubernetes + Swarm) — Udemy</li>
+          <li>Red Hat Certified System Administrator (RHCSA) — CSL Training</li>
+          <li>Cisco CCNA Routing & Switching — CSL Training</li>
+          <li>Enterprise Linux Server-1 — CSL Training</li>
+        </ul>
+        <p class="small">Tip: add certificate links (Credly/Udemy) beside each item.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="sectionTitle">
+        <h2>Contact</h2>
+        <span>Let’s connect</span>
+      </div>
+
+      <div class="contactGrid">
+        <div class="card contactBox">
+          <p style="margin:0 0 10px;">
+            Interested in DevOps / SRE opportunities, consulting, or a quick chat about cloud-native infrastructure.
+          </p>
+          <div class="contactLine">
+            <span>✉️</span>
+            <a href="mailto:himelmenow@gmail.com">himelmenow@gmail.com</a>
+          </div>
+          <div class="contactLine" style="margin-top:8px;">
+            <span>📞</span>
+            <a href="tel:+8801777397888">+8801777397888</a>
+          </div>
+          <div class="contactLine" style="margin-top:8px;">
+            <span>📍</span>
+            <span>Dhaka, Bangladesh</span>
+          </div>
+          <div class="contactLine" style="margin-top:8px;">
+            <span>🔗</span>
+            <!-- Replace # with your real URLs -->
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <span class="small">•</span>
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card contactBox">
+          <p style="margin:0 0 10px;"><b>Quick message</b> (optional form)</p>
+          <form onsubmit="return handleSubmit(event)">
+            <label class="small" for="name">Name</label><br/>
+            <input id="name" name="name" required
+              style="width:100%; padding:11px 12px; margin:6px 0 12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--text);" />
+
+            <label class="small" for="email">Email</label><br/>
+            <input id="email" name="email" type="email" required
+              style="width:100%; padding:11px 12px; margin:6px 0 12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--text);" />
+
+            <label class="small" for="msg">Message</label><br/>
+            <textarea id="msg" name="msg" rows="4" required
+              style="width:100%; padding:11px 12px; margin:6px 0 12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--text); resize:vertical;"></textarea>
+
+            <button class="btn primary" type="submit">Generate Email Draft</button>
+            <p class="small" style="margin:10px 0 0;">
+              This button creates a mailto draft locally (no backend). For a real form, connect Netlify Forms / Formspree / your backend.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap" style="padding:0;">
+        <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <span>© <span id="year"></span> Delwar Hossain Himel</span>
+          <span class="small">Built with HTML + CSS • Optimized for a clean one-page portfolio</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <a class="btn toplink" href="#top" aria-label="Back to top">↑ Top</a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const msg = document.getElementById("msg").value.trim();
+
+      const subject = encodeURIComponent(`Portfolio inquiry — ${name}`);
+      const body = encodeURIComponent(
+        `Hi Delwar,\n\n` +
+        `${msg}\n\n` +
+        `Thanks,\n${name}\n${email}\n`
+      );
+
+      // Opens the user's default mail app with a prefilled email draft
+      window.location.href = `mailto:himelmenow@gmail.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
+</body>
+</html>
